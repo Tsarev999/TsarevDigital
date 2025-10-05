@@ -3,26 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>Intro — Царев Дижитал</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
     body {
-      margin:0;
-      background:#000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      overflow:hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     video {
-      width:100%;
-      height:100%;
-      object-fit:cover; /* заставляет видео обрезаться по краям, но всегда на весь экран */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Заполняет весь экран без искажений */
+      object-position: center;
+      filter: contrast(1.1) brightness(1.05) saturate(1.1); /* немного улучшает качество */
+      image-rendering: crisp-edges;
     }
   </style>
 </head>
 <body>
   <video id="introVideo" autoplay muted playsinline>
     <source src="assets/intro.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
   </video>
 
   <script>
